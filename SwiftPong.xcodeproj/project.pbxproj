@@ -7,17 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FC32B2232653EB1C009CF868 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC32B2222653EB1C009CF868 /* AppDelegate.swift */; };
-		FC32B2252653EB1C009CF868 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC32B2242653EB1C009CF868 /* GameViewController.swift */; };
-		FC32B2282653EB1C009CF868 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC32B2262653EB1C009CF868 /* Main.storyboard */; };
 		FC32B22B2653EB1C009CF868 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC32B2292653EB1C009CF868 /* LaunchScreen.storyboard */; };
-		FC32B2342653EB1C009CF868 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC32B2332653EB1C009CF868 /* AppDelegate.swift */; };
-		FC32B2362653EB1C009CF868 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC32B2352653EB1C009CF868 /* GameViewController.swift */; };
 		FC32B2392653EB1C009CF868 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC32B2372653EB1C009CF868 /* Main.storyboard */; };
 		FC32B23C2653EB1C009CF868 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC32B23A2653EB1C009CF868 /* LaunchScreen.storyboard */; };
-		FC32B2452653EB1C009CF868 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC32B2442653EB1C009CF868 /* AppDelegate.swift */; };
-		FC32B2472653EB1C009CF868 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC32B2462653EB1C009CF868 /* GameViewController.swift */; };
-		FC32B24A2653EB1C009CF868 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC32B2482653EB1C009CF868 /* Main.storyboard */; };
 		FC32B24D2653EB1C009CF868 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = FC32B2172653EB19009CF868 /* Actions.sks */; };
 		FC32B24E2653EB1C009CF868 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = FC32B2172653EB19009CF868 /* Actions.sks */; };
 		FC32B24F2653EB1C009CF868 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = FC32B2172653EB19009CF868 /* Actions.sks */; };
@@ -30,6 +22,33 @@
 		FC32B2562653EB1C009CF868 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC32B21A2653EB1C009CF868 /* Assets.xcassets */; };
 		FC32B2572653EB1C009CF868 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC32B21A2653EB1C009CF868 /* Assets.xcassets */; };
 		FC32B2582653EB1C009CF868 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC32B21A2653EB1C009CF868 /* Assets.xcassets */; };
+		FC32B2652653EBC8009CF868 /* SwiftPong.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC32B2642653EBC8009CF868 /* SwiftPong.swift */; };
+		FC32B2662653EBC8009CF868 /* SwiftPong.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC32B2642653EBC8009CF868 /* SwiftPong.swift */; };
+		FC32B2672653EBC8009CF868 /* SwiftPong.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC32B2642653EBC8009CF868 /* SwiftPong.swift */; };
+		FC7313F626667B4F001DE983 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7313F526667B4F001DE983 /* System.swift */; };
+		FC7313F726667B4F001DE983 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7313F526667B4F001DE983 /* System.swift */; };
+		FC7313F826667B4F001DE983 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7313F526667B4F001DE983 /* System.swift */; };
+		FC74099226553E8700002638 /* EnityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC74099126553E8700002638 /* EnityManager.swift */; };
+		FC74099326553E8700002638 /* EnityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC74099126553E8700002638 /* EnityManager.swift */; };
+		FC74099426553E8700002638 /* EnityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC74099126553E8700002638 /* EnityManager.swift */; };
+		FC7409972655425900002638 /* NodeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7409962655425900002638 /* NodeComponent.swift */; };
+		FC7409982655425900002638 /* NodeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7409962655425900002638 /* NodeComponent.swift */; };
+		FC7409992655425900002638 /* NodeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7409962655425900002638 /* NodeComponent.swift */; };
+		FC74099C26554FF600002638 /* MoveSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC74099B26554FF600002638 /* MoveSystem.swift */; };
+		FC74099D26554FF600002638 /* MoveSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC74099B26554FF600002638 /* MoveSystem.swift */; };
+		FC74099E26554FF600002638 /* MoveSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC74099B26554FF600002638 /* MoveSystem.swift */; };
+		FC7409A0265552C100002638 /* MoveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC74099F265552C100002638 /* MoveComponent.swift */; };
+		FC7409A1265552C100002638 /* MoveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC74099F265552C100002638 /* MoveComponent.swift */; };
+		FC7409A2265552C100002638 /* MoveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC74099F265552C100002638 /* MoveComponent.swift */; };
+		FC8128CB2653FC190060C5FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8128CA2653FC190060C5FA /* ContentView.swift */; };
+		FC8128CC2653FC190060C5FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8128CA2653FC190060C5FA /* ContentView.swift */; };
+		FC8128CD2653FC190060C5FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8128CA2653FC190060C5FA /* ContentView.swift */; };
+		FC8C0183265F59DF006D185E /* VelocityComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8C0182265F59DF006D185E /* VelocityComponent.swift */; };
+		FC8C0184265F59DF006D185E /* VelocityComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8C0182265F59DF006D185E /* VelocityComponent.swift */; };
+		FC8C0185265F59DF006D185E /* VelocityComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8C0182265F59DF006D185E /* VelocityComponent.swift */; };
+		FC8D958526638FB8005D376C /* TeamComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8D958426638FB8005D376C /* TeamComponent.swift */; };
+		FC8D958626638FB8005D376C /* TeamComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8D958426638FB8005D376C /* TeamComponent.swift */; };
+		FC8D958726638FB8005D376C /* TeamComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8D958426638FB8005D376C /* TeamComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,23 +57,24 @@
 		FC32B2192653EB19009CF868 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		FC32B21A2653EB1C009CF868 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC32B21F2653EB1C009CF868 /* SwiftPong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftPong.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC32B2222653EB1C009CF868 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FC32B2242653EB1C009CF868 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		FC32B2272653EB1C009CF868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC32B22A2653EB1C009CF868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC32B22C2653EB1C009CF868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC32B2312653EB1C009CF868 /* SwiftPong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftPong.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC32B2332653EB1C009CF868 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FC32B2352653EB1C009CF868 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		FC32B2382653EB1C009CF868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC32B23B2653EB1C009CF868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC32B23D2653EB1C009CF868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC32B2422653EB1C009CF868 /* SwiftPong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftPong.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC32B2442653EB1C009CF868 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FC32B2462653EB1C009CF868 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		FC32B2492653EB1C009CF868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC32B24B2653EB1C009CF868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC32B24C2653EB1C009CF868 /* SwiftPong_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftPong_macOS.entitlements; sourceTree = "<group>"; };
+		FC32B2642653EBC8009CF868 /* SwiftPong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftPong.swift; sourceTree = "<group>"; };
+		FC7313F526667B4F001DE983 /* System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
+		FC74099126553E8700002638 /* EnityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnityManager.swift; sourceTree = "<group>"; };
+		FC7409962655425900002638 /* NodeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeComponent.swift; sourceTree = "<group>"; };
+		FC74099B26554FF600002638 /* MoveSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveSystem.swift; sourceTree = "<group>"; };
+		FC74099F265552C100002638 /* MoveComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveComponent.swift; sourceTree = "<group>"; };
+		FC8128CA2653FC190060C5FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FC8C0182265F59DF006D185E /* VelocityComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VelocityComponent.swift; sourceTree = "<group>"; };
+		FC8D958426638FB8005D376C /* TeamComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +116,10 @@
 		FC32B2162653EB19009CF868 /* SwiftPong Shared */ = {
 			isa = PBXGroup;
 			children = (
+				FC9F22422663B7FA006B17EC /* ECS */,
+				FC74099A26554FE100002638 /* Systems */,
+				FC7409952655424900002638 /* Components */,
+				FC40CE642654686D00E55C02 /* View */,
 				FC32B2172653EB19009CF868 /* Actions.sks */,
 				FC32B2182653EB19009CF868 /* GameScene.sks */,
 				FC32B2192653EB19009CF868 /* GameScene.swift */,
@@ -117,9 +141,6 @@
 		FC32B2212653EB1C009CF868 /* SwiftPong iOS */ = {
 			isa = PBXGroup;
 			children = (
-				FC32B2222653EB1C009CF868 /* AppDelegate.swift */,
-				FC32B2242653EB1C009CF868 /* GameViewController.swift */,
-				FC32B2262653EB1C009CF868 /* Main.storyboard */,
 				FC32B2292653EB1C009CF868 /* LaunchScreen.storyboard */,
 				FC32B22C2653EB1C009CF868 /* Info.plist */,
 			);
@@ -129,8 +150,6 @@
 		FC32B2322653EB1C009CF868 /* SwiftPong tvOS */ = {
 			isa = PBXGroup;
 			children = (
-				FC32B2332653EB1C009CF868 /* AppDelegate.swift */,
-				FC32B2352653EB1C009CF868 /* GameViewController.swift */,
 				FC32B2372653EB1C009CF868 /* Main.storyboard */,
 				FC32B23A2653EB1C009CF868 /* LaunchScreen.storyboard */,
 				FC32B23D2653EB1C009CF868 /* Info.plist */,
@@ -141,13 +160,47 @@
 		FC32B2432653EB1C009CF868 /* SwiftPong macOS */ = {
 			isa = PBXGroup;
 			children = (
-				FC32B2442653EB1C009CF868 /* AppDelegate.swift */,
-				FC32B2462653EB1C009CF868 /* GameViewController.swift */,
-				FC32B2482653EB1C009CF868 /* Main.storyboard */,
 				FC32B24B2653EB1C009CF868 /* Info.plist */,
 				FC32B24C2653EB1C009CF868 /* SwiftPong_macOS.entitlements */,
 			);
 			path = "SwiftPong macOS";
+			sourceTree = "<group>";
+		};
+		FC40CE642654686D00E55C02 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FC32B2642653EBC8009CF868 /* SwiftPong.swift */,
+				FC8128CA2653FC190060C5FA /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FC7409952655424900002638 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FC7409962655425900002638 /* NodeComponent.swift */,
+				FC74099F265552C100002638 /* MoveComponent.swift */,
+				FC8C0182265F59DF006D185E /* VelocityComponent.swift */,
+				FC8D958426638FB8005D376C /* TeamComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FC74099A26554FE100002638 /* Systems */ = {
+			isa = PBXGroup;
+			children = (
+				FC74099B26554FF600002638 /* MoveSystem.swift */,
+			);
+			path = Systems;
+			sourceTree = "<group>";
+		};
+		FC9F22422663B7FA006B17EC /* ECS */ = {
+			isa = PBXGroup;
+			children = (
+				FC74099126553E8700002638 /* EnityManager.swift */,
+				FC7313F526667B4F001DE983 /* System.swift */,
+			);
+			path = ECS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,7 +303,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC32B2502653EB1C009CF868 /* GameScene.sks in Resources */,
-				FC32B2282653EB1C009CF868 /* Main.storyboard in Resources */,
 				FC32B24D2653EB1C009CF868 /* Actions.sks in Resources */,
 				FC32B22B2653EB1C009CF868 /* LaunchScreen.storyboard in Resources */,
 				FC32B2562653EB1C009CF868 /* Assets.xcassets in Resources */,
@@ -273,7 +325,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC32B24A2653EB1C009CF868 /* Main.storyboard in Resources */,
 				FC32B2522653EB1C009CF868 /* GameScene.sks in Resources */,
 				FC32B2582653EB1C009CF868 /* Assets.xcassets in Resources */,
 				FC32B24F2653EB1C009CF868 /* Actions.sks in Resources */,
@@ -287,9 +338,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC7313F626667B4F001DE983 /* System.swift in Sources */,
+				FC7409A0265552C100002638 /* MoveComponent.swift in Sources */,
+				FC74099C26554FF600002638 /* MoveSystem.swift in Sources */,
 				FC32B2532653EB1C009CF868 /* GameScene.swift in Sources */,
-				FC32B2252653EB1C009CF868 /* GameViewController.swift in Sources */,
-				FC32B2232653EB1C009CF868 /* AppDelegate.swift in Sources */,
+				FC74099226553E8700002638 /* EnityManager.swift in Sources */,
+				FC8C0183265F59DF006D185E /* VelocityComponent.swift in Sources */,
+				FC7409972655425900002638 /* NodeComponent.swift in Sources */,
+				FC8D958526638FB8005D376C /* TeamComponent.swift in Sources */,
+				FC8128CB2653FC190060C5FA /* ContentView.swift in Sources */,
+				FC32B2652653EBC8009CF868 /* SwiftPong.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,9 +355,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC7313F726667B4F001DE983 /* System.swift in Sources */,
+				FC7409A1265552C100002638 /* MoveComponent.swift in Sources */,
+				FC74099D26554FF600002638 /* MoveSystem.swift in Sources */,
 				FC32B2542653EB1C009CF868 /* GameScene.swift in Sources */,
-				FC32B2362653EB1C009CF868 /* GameViewController.swift in Sources */,
-				FC32B2342653EB1C009CF868 /* AppDelegate.swift in Sources */,
+				FC74099326553E8700002638 /* EnityManager.swift in Sources */,
+				FC8C0184265F59DF006D185E /* VelocityComponent.swift in Sources */,
+				FC7409982655425900002638 /* NodeComponent.swift in Sources */,
+				FC8D958626638FB8005D376C /* TeamComponent.swift in Sources */,
+				FC8128CC2653FC190060C5FA /* ContentView.swift in Sources */,
+				FC32B2662653EBC8009CF868 /* SwiftPong.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,23 +372,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC7313F826667B4F001DE983 /* System.swift in Sources */,
+				FC7409A2265552C100002638 /* MoveComponent.swift in Sources */,
+				FC74099E26554FF600002638 /* MoveSystem.swift in Sources */,
 				FC32B2552653EB1C009CF868 /* GameScene.swift in Sources */,
-				FC32B2472653EB1C009CF868 /* GameViewController.swift in Sources */,
-				FC32B2452653EB1C009CF868 /* AppDelegate.swift in Sources */,
+				FC74099426553E8700002638 /* EnityManager.swift in Sources */,
+				FC8C0185265F59DF006D185E /* VelocityComponent.swift in Sources */,
+				FC7409992655425900002638 /* NodeComponent.swift in Sources */,
+				FC8D958726638FB8005D376C /* TeamComponent.swift in Sources */,
+				FC8128CD2653FC190060C5FA /* ContentView.swift in Sources */,
+				FC32B2672653EBC8009CF868 /* SwiftPong.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FC32B2262653EB1C009CF868 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC32B2272653EB1C009CF868 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FC32B2292653EB1C009CF868 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -346,14 +410,6 @@
 				FC32B23B2653EB1C009CF868 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		FC32B2482653EB1C009CF868 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC32B2492653EB1C009CF868 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
