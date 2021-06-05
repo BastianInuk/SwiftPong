@@ -8,17 +8,29 @@ extension Publishers.CompactMap where Output: GCKeyboardInput
         forKeyCode keyCode: GCKeyCode
     ) -> AnyPublisher<Bool, Upstream.Failure>
     {
-        self.compactMap {
-            $0.button(forKeyCode: keyCode)
-        }.flatMap {
-            $0.publisher(for: \.isPressed)
-        }.eraseToAnyPublisher()
+        self.compactMap { $0.button(forKeyCode: keyCode) }
+            .flatMap(passThroughKey)
+            .eraseToAnyPublisher()
+    }
+    
+    private func passThroughKey(button: GCControllerButtonInput) -> PassthroughSubject<Bool, Never>
+    {
+        let publisher = PassthroughSubject<Bool, Never>()
+        button.pressedChangedHandler = { _, _, pressed in
+            publisher.send(pressed)
+        }
+        return publisher
     }
 }
 
 class MoveSystem: GKComponent {
     let entityManager: EntityManager
-    var directions: [TeamComponent.Team: MoveComponent.Dir] = [:]
+    
+    @Published
+    var leftDir = Optional<MoveComponent.Dir>.none
+    @Published
+    var rightDir = Optional<MoveComponent.Dir>.none
+    
     var cancels = [AnyCancellable]()
     
     let movementSpeed = 10
@@ -29,37 +41,30 @@ class MoveSystem: GKComponent {
         super.init()
         
         let keyboard = NotificationCenter.default
-            .publisher(for: Notification.Name.GCKeyboardDidConnect)
-            .compactMap { notification in
-                (notification.object as? GCKeyboard)?.keyboardInput
-            }
+            .publisher (for: .GCKeyboardDidConnect)
+            .map (\.object)
+            .map { $0 as! GCKeyboard }
+            .compactMap (\.keyboardInput)
         
         keyboard.isPressed(forKeyCode: .keyW)
             .print("Up")
-            .sink(receiveValue: reactTo(direction: .up, team: .left))
-            .store(in: &cancels)
+            .map { $0 ? .up : .none }
+            .assign(to: &$leftDir)
+            
             
         keyboard.isPressed(forKeyCode: .keyS)
             .print("Down")
-            .sink(receiveValue: reactTo(direction: .down, team: .left))
-            .store(in: &cancels)
+            .map { $0 ? .down : .none }
+            .assign(to: &$leftDir)
             
         keyboard.isPressed(forKeyCode: .upArrow)
-            .sink (receiveValue: reactTo(direction: .up, team: .right))
-            .store(in: &cancels)
+            .map { $0 ? .up : .none }
+            .assign(to: &$rightDir)
             
         keyboard.isPressed(forKeyCode: .downArrow)
-            .sink(receiveValue: reactTo(direction: .down, team: .right))
-            .store(in: &cancels)
+            .map { $0 ? .down : .none }
+            .assign(to: &$rightDir)
         
-    }
-    
-    func reactTo(direction: MoveComponent.Dir, team: TeamComponent.Team) -> (_ pressed: Bool) -> ()
-    {
-        return { pressed in
-            if pressed { self.directions[team] = direction }
-            else if self.directions[team] == direction { self.directions[team] = nil }
-        }
     }
     
     deinit {
@@ -81,7 +86,7 @@ class MoveSystem: GKComponent {
             
             movement.agentWillUpdate()
             
-            let dir = directions[team]
+            let dir = team == .left ? self.leftDir : self.rightDir
             
             switch dir {
             case .up:
