@@ -13,9 +13,9 @@ extension Publishers.CompactMap where Output: GCKeyboardInput
             .eraseToAnyPublisher()
     }
     
-    private func passThroughKey(button: GCControllerButtonInput) -> PassthroughSubject<Bool, Never>
+    private func passThroughKey(button: GCControllerButtonInput) -> PassthroughSubject<Bool, Upstream.Failure>
     {
-        let publisher = PassthroughSubject<Bool, Never>()
+        let publisher = PassthroughSubject<Bool, Upstream.Failure>()
         button.pressedChangedHandler = { _, _, pressed in
             publisher.send(pressed)
         }
@@ -27,9 +27,9 @@ class MoveSystem: GKComponent {
     let entityManager: EntityManager
     
     @Published
-    var leftDir = Optional<MoveComponent.Dir>.none
+    var leftDir = 0
     @Published
-    var rightDir = Optional<MoveComponent.Dir>.none
+    var rightDir = 0
     
     var cancels = [AnyCancellable]()
     
@@ -47,23 +47,24 @@ class MoveSystem: GKComponent {
             .compactMap (\.keyboardInput)
         
         keyboard.isPressed(forKeyCode: .keyW)
-            .print("Up")
-            .map { $0 ? .up : .none }
-            .assign(to: &$leftDir)
-            
+            .map { $0 ? +1 : -1 }
+            .sink { self.leftDir += $0 }
+            .store(in: &cancels)
             
         keyboard.isPressed(forKeyCode: .keyS)
-            .print("Down")
-            .map { $0 ? .down : .none }
-            .assign(to: &$leftDir)
+            .map { $0 ? -1 : +1 }
+            .sink { self.leftDir += $0 }
+            .store(in: &cancels)
             
         keyboard.isPressed(forKeyCode: .upArrow)
-            .map { $0 ? .up : .none }
-            .assign(to: &$rightDir)
+            .map { $0 ? +1 : -1 }
+            .sink { self.rightDir += $0 }
+            .store(in: &cancels)
             
         keyboard.isPressed(forKeyCode: .downArrow)
-            .map { $0 ? .down : .none }
-            .assign(to: &$rightDir)
+            .map { $0 ? -1 : +1 }
+            .sink { self.rightDir += $0 }
+            .store(in: &cancels)
         
     }
     
@@ -76,9 +77,9 @@ class MoveSystem: GKComponent {
     }
     
     override func update(deltaTime seconds: TimeInterval) {
+        let (retainLeft, retainRight) = (self.leftDir, self.rightDir)
+        
         entityManager.entities.forEach { entity in
-            
-            
             guard let team = entity.component(ofType: TeamComponent.self)?.team,
                   let movement = entity.component(ofType: MoveComponent.self) else {
                 return
@@ -86,38 +87,15 @@ class MoveSystem: GKComponent {
             
             movement.agentWillUpdate()
             
-            let dir = team == .left ? self.leftDir : self.rightDir
+            let dir = team == .left ? retainLeft : retainRight
             
-            switch dir {
-            case .up:
-                print("Moving up")
-                movement.position.y += Float(movementSpeed)
-                break
-            case .down:
-                movement.position.y -= Float(movementSpeed)
-                break
-            case .none:
-                break
+            if (dir != 0) {
+                print(dir)
             }
+            movement.position.y += Float(dir)
+            
             
             movement.agentDidUpdate()
         }
     }
 }
-
-/*
-class MovementSystem: System {
-    var query: Query {
-        MoveComponent.self
-        TeamComponent.self
-    }
-    
-    var directions: [TeamComponent.Team: MoveComponent.Dir] = [:]
-    
-    func update(deltaTime: TimeInterval, entities: [GKEntity]) {
-        <#code#>
-    }
-    
-    
-}
-*/
