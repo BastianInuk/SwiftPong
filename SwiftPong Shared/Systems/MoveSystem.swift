@@ -2,36 +2,15 @@ import GameplayKit
 import Combine
 import GameController
 
-extension Publishers.CompactMap where Output: GCKeyboardInput
-{
-    func isPressed (
-        forKeyCode keyCode: GCKeyCode
-    ) -> AnyPublisher<Bool, Upstream.Failure>
-    {
-        self.compactMap { $0.button(forKeyCode: keyCode) }
-            .flatMap(passThroughKey)
-            .eraseToAnyPublisher()
-    }
-    
-    private func passThroughKey(button: GCControllerButtonInput) -> PassthroughSubject<Bool, Upstream.Failure>
-    {
-        let publisher = PassthroughSubject<Bool, Upstream.Failure>()
-        button.pressedChangedHandler = { _, _, pressed in
-            publisher.send(pressed)
-        }
-        return publisher
-    }
-}
-
 class MoveSystem: GKComponent {
     let entityManager: EntityManager
     
     @Published
-    var leftDir = 0
+    private var leftDir: Int8 = 0
     @Published
-    var rightDir = 0
+    private var rightDir: Int8 = 0
     
-    var cancels = [AnyCancellable]()
+    private var cancels = [AnyCancellable]()
     
     let movementSpeed = 10
     
@@ -81,23 +60,21 @@ class MoveSystem: GKComponent {
     override func update(deltaTime seconds: TimeInterval) {
         let (retainLeft, retainRight) = (self.leftDir, self.rightDir)
         
-        entityManager.entities.forEach { entity in
-            guard let team = entity.component(ofType: TeamComponent.self)?.team,
-                  let movement = entity.component(ofType: MoveComponent.self) else {
-                return
+        entityManager.entities
+            .forEach { entity in
+                guard let team = entity.component(ofType: TeamComponent.self)?.team,
+                      let movement = entity.component(ofType: MoveComponent.self) else {
+                    return
+                }
+                
+                movement.agentWillUpdate()
+                
+                let dir = team == .left ? retainLeft : retainRight
+                
+                movement.position.y += Float(dir)
+                
+                movement.agentDidUpdate()
             }
-            
-            movement.agentWillUpdate()
-            
-            let dir = team == .left ? retainLeft : retainRight
-            
-            if (dir != 0) {
-                print(dir)
-            }
-            movement.position.y += Float(dir)
-            
-            
-            movement.agentDidUpdate()
-        }
+        
     }
 }

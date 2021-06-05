@@ -49,6 +49,9 @@
 		FC8D958526638FB8005D376C /* TeamComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8D958426638FB8005D376C /* TeamComponent.swift */; };
 		FC8D958626638FB8005D376C /* TeamComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8D958426638FB8005D376C /* TeamComponent.swift */; };
 		FC8D958726638FB8005D376C /* TeamComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8D958426638FB8005D376C /* TeamComponent.swift */; };
+		FC9FDCFD266C04C0006150D0 /* Controller+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9FDCFC266C04C0006150D0 /* Controller+Publisher.swift */; };
+		FC9FDCFE266C04C0006150D0 /* Controller+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9FDCFC266C04C0006150D0 /* Controller+Publisher.swift */; };
+		FC9FDCFF266C04C0006150D0 /* Controller+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9FDCFC266C04C0006150D0 /* Controller+Publisher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +78,7 @@
 		FC8128CA2653FC190060C5FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FC8C0182265F59DF006D185E /* VelocityComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VelocityComponent.swift; sourceTree = "<group>"; };
 		FC8D958426638FB8005D376C /* TeamComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamComponent.swift; sourceTree = "<group>"; };
+		FC9FDCFC266C04C0006150D0 /* Controller+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Controller+Publisher.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +203,7 @@
 			children = (
 				FC74099126553E8700002638 /* EnityManager.swift */,
 				FC7313F526667B4F001DE983 /* System.swift */,
+				FC9FDCFC266C04C0006150D0 /* Controller+Publisher.swift */,
 			);
 			path = ECS;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 				FC74099C26554FF600002638 /* MoveSystem.swift in Sources */,
 				FC32B2532653EB1C009CF868 /* GameScene.swift in Sources */,
 				FC74099226553E8700002638 /* EnityManager.swift in Sources */,
+				FC9FDCFD266C04C0006150D0 /* Controller+Publisher.swift in Sources */,
 				FC8C0183265F59DF006D185E /* VelocityComponent.swift in Sources */,
 				FC7409972655425900002638 /* NodeComponent.swift in Sources */,
 				FC8D958526638FB8005D376C /* TeamComponent.swift in Sources */,
@@ -360,6 +366,7 @@
 				FC74099D26554FF600002638 /* MoveSystem.swift in Sources */,
 				FC32B2542653EB1C009CF868 /* GameScene.swift in Sources */,
 				FC74099326553E8700002638 /* EnityManager.swift in Sources */,
+				FC9FDCFE266C04C0006150D0 /* Controller+Publisher.swift in Sources */,
 				FC8C0184265F59DF006D185E /* VelocityComponent.swift in Sources */,
 				FC7409982655425900002638 /* NodeComponent.swift in Sources */,
 				FC8D958626638FB8005D376C /* TeamComponent.swift in Sources */,
@@ -377,6 +384,7 @@
 				FC74099E26554FF600002638 /* MoveSystem.swift in Sources */,
 				FC32B2552653EB1C009CF868 /* GameScene.swift in Sources */,
 				FC74099426553E8700002638 /* EnityManager.swift in Sources */,
+				FC9FDCFF266C04C0006150D0 /* Controller+Publisher.swift in Sources */,
 				FC8C0185265F59DF006D185E /* VelocityComponent.swift in Sources */,
 				FC7409992655425900002638 /* NodeComponent.swift in Sources */,
 				FC8D958726638FB8005D376C /* TeamComponent.swift in Sources */,
