@@ -35,6 +35,7 @@ class MoveSystem: GKComponent {
     
     let movementSpeed = 10
     
+    // MARK: - Setup
     init(entityManager: EntityManager) {
         self.entityManager = entityManager
         
@@ -76,6 +77,7 @@ class MoveSystem: GKComponent {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Frame updates
     override func update(deltaTime seconds: TimeInterval) {
         let (retainLeft, retainRight) = (self.leftDir, self.rightDir)
         
