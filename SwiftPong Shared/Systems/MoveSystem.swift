@@ -3,7 +3,7 @@ import Combine
 import GameController
 
 class MoveSystem: GKComponent {
-    let entityManager: EntityManager
+    unowned let entityManager: EntityManager
     
     private var dir: (left: Int8, right: Int8) = (0, 0)
     
@@ -25,22 +25,22 @@ class MoveSystem: GKComponent {
         
         keyboard.isPressed (forKeyCode: .keyW)
             .map { $0 ? +1 : -1 }
-            .sink { self.dir.left += $0 }
+            .sink { [unowned self] in self.dir.left += $0 }
             .store (in: &cancels)
             
         keyboard.isPressed (forKeyCode: .keyS)
             .map { $0 ? -1 : +1 }
-            .sink { self.dir.left += $0 }
+            .sink { [unowned self] in self.dir.left += $0 }
             .store (in: &cancels)
             
         keyboard.isPressed(forKeyCode: .upArrow)
             .map { $0 ? +1 : -1 }
-            .sink { self.dir.right += $0 }
+            .sink { [unowned self] in self.dir.right += $0 }
             .store (in: &cancels)
             
         keyboard.isPressed(forKeyCode: .downArrow)
             .map { $0 ? -1 : +1 }
-            .sink { self.dir.right += $0 }
+            .sink { [unowned self] in self.dir.right += $0 } 
             .store (in: &cancels)
         
     }
