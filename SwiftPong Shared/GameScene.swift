@@ -48,7 +48,7 @@ class GameScene: SKScene {
             radius: Float(bat.fillTexture?.size().width ?? 0 * 0.3),
             entityManager: entityManager
         ))
-        entt.addComponent(TeamComponent(team: .right))
+        entt.addComponent(TeamComponent(team: team))
         
         entityManager.add(entity: entt)
     }

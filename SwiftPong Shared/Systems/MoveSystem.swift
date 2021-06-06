@@ -9,7 +9,7 @@ class MoveSystem: GKComponent {
     
     private var cancels = [AnyCancellable]()
     
-    let movementSpeed = 10
+    let movementSpeed = 4
     
     // MARK: - Setup
     init(entityManager: EntityManager) {
@@ -67,7 +67,7 @@ class MoveSystem: GKComponent {
                 
                 let dir = team == .left ? retainLeft : retainRight
                 
-                movement.position.y += Float(dir)
+                movement.position.y += Float(Int(dir) * movementSpeed)
                 
                 movement.agentDidUpdate()
             }
