@@ -5,10 +5,7 @@ import GameController
 class MoveSystem: GKComponent {
     let entityManager: EntityManager
     
-    @Published
-    private var leftDir: Int8 = 0
-    @Published
-    private var rightDir: Int8 = 0
+    private var dir: (left: Int8, right: Int8) = (0, 0)
     
     private var cancels = [AnyCancellable]()
     
@@ -22,29 +19,29 @@ class MoveSystem: GKComponent {
         
         let keyboard = NotificationCenter.default
             .publisher (for: .GCKeyboardDidConnect)
-            .map (\.object)
-            .map { $0 as! GCKeyboard }
+            .compactMap (\.object)
+            .cast(to: GCKeyboard.self)
             .compactMap (\.keyboardInput)
         
-        keyboard.isPressed(forKeyCode: .keyW)
+        keyboard.isPressed (forKeyCode: .keyW)
             .map { $0 ? +1 : -1 }
-            .sink { self.leftDir += $0 }
-            .store(in: &cancels)
+            .sink { self.dir.left += $0 }
+            .store (in: &cancels)
             
-        keyboard.isPressed(forKeyCode: .keyS)
+        keyboard.isPressed (forKeyCode: .keyS)
             .map { $0 ? -1 : +1 }
-            .sink { self.leftDir += $0 }
-            .store(in: &cancels)
+            .sink { self.dir.left += $0 }
+            .store (in: &cancels)
             
         keyboard.isPressed(forKeyCode: .upArrow)
             .map { $0 ? +1 : -1 }
-            .sink { self.rightDir += $0 }
-            .store(in: &cancels)
+            .sink { self.dir.right += $0 }
+            .store (in: &cancels)
             
         keyboard.isPressed(forKeyCode: .downArrow)
             .map { $0 ? -1 : +1 }
-            .sink { self.rightDir += $0 }
-            .store(in: &cancels)
+            .sink { self.dir.right += $0 }
+            .store (in: &cancels)
         
     }
     
@@ -58,7 +55,7 @@ class MoveSystem: GKComponent {
     
     // MARK: - Frame updates
     override func update(deltaTime seconds: TimeInterval) {
-        let (retainLeft, retainRight) = (self.leftDir, self.rightDir)
+        let (retainLeft, retainRight) = self.dir
         
         entityManager.entities
             .forEach { entity in
@@ -66,7 +63,6 @@ class MoveSystem: GKComponent {
                       let movement = entity.component(ofType: MoveComponent.self) else {
                     return
                 }
-                
                 movement.agentWillUpdate()
                 
                 let dir = team == .left ? retainLeft : retainRight

@@ -16,6 +16,13 @@ struct SystemBuilder {
     }
 }
 
+extension Array where Element: GKComponentSystem<GKComponent>
+{
+    init(@SystemBuilder components: () -> [Element]) {
+        self = components()
+    }
+}
+
 class EntityManager {
     
     var entities = Set<GKEntity>()
@@ -24,15 +31,13 @@ class EntityManager {
     let scene: SKScene
     
     // MARK: - Systems
-    @SystemBuilder
-    var components: [GKComponentSystem<GKComponent>] {
+    lazy var components: [GKComponentSystem<GKComponent>] = .init {
         NodeComponent.self
         MoveComponent.self
         VelocityComponent.self
     }
     
-    @SystemBuilder
-    var systems: [GKComponentSystem<GKComponent>] {
+    lazy var systems: [GKComponentSystem<GKComponent>] = .init {
         MoveSystem(entityManager: self)
     }
     
