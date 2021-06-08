@@ -109,7 +109,7 @@
 		FC32B2112653EB18009CF868 = {
 			isa = PBXGroup;
 			children = (
-				FC32B2162653EB19009CF868 /* SwiftPong Shared */,
+				FC32B2162653EB19009CF868 /* SwiftPong */,
 				FC32B2212653EB1C009CF868 /* SwiftPong iOS */,
 				FC32B2322653EB1C009CF868 /* SwiftPong tvOS */,
 				FC32B2432653EB1C009CF868 /* SwiftPong macOS */,
@@ -117,7 +117,7 @@
 			);
 			sourceTree = "<group>";
 		};
-		FC32B2162653EB19009CF868 /* SwiftPong Shared */ = {
+		FC32B2162653EB19009CF868 /* SwiftPong */ = {
 			isa = PBXGroup;
 			children = (
 				FC9F22422663B7FA006B17EC /* ECS */,
@@ -129,7 +129,7 @@
 				FC32B2192653EB19009CF868 /* GameScene.swift */,
 				FC32B21A2653EB1C009CF868 /* Assets.xcassets */,
 			);
-			path = "SwiftPong Shared";
+			path = SwiftPong;
 			sourceTree = "<group>";
 		};
 		FC32B2202653EB1C009CF868 /* Products */ = {
